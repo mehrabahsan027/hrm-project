@@ -6,7 +6,7 @@ import ExportExcelIcon from "../../assets/export-excel-download.png";
 
 import AddEmployeeIcon from "../../assets/add-employee.png";
 
-export default function EmployeeHeader() {
+export default function EmployeeHeader({ onAddEmployeeClick }) {
   return (
     <section className="w-11/12 mx-auto flex items-center justify-between pt-10">
       {/* logo and text */}
@@ -27,13 +27,16 @@ export default function EmployeeHeader() {
 
       {/* export excel and add employee button */}
       <div className="flex gap-x-5">
-        <button className="bg-[#FFFFFF] rounded-lg px-8 py-3 flex gap-x-2">
+        <button className="bg-[#FFFFFF] rounded-lg px-8 py-3 flex gap-x-2 cursor-pointer hover:bg-gray-50 transition duration-200">
           <span className="text-[#141928] font-semibold ">Export Excel</span>
 
           <img src={ExportExcelIcon} alt="Export Excel Icon" />
         </button>
 
-        <button className="bg-[#3E50F7]  rounded-lg px-8 py-3 flex gap-x-2 whitespace-nowrap">
+        <button
+          onClick={onAddEmployeeClick}
+          className="bg-[#3E50F7] rounded-lg px-8 py-3 flex gap-x-2 whitespace-nowrap cursor-pointer hover:bg-blue-700 transition duration-200"
+        >
           <img src={AddEmployeeIcon} alt="Add Employee Icon" />
           <span className="text-[#FFFFFF] manrope-semibold text-base">
             Add Employee
